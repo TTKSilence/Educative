@@ -1,6 +1,6 @@
 import collections
 def solution(string,pattern):
-    '''My Solution
+    #'''My Solution
     pattern_dic=collections.Counter(pattern)
     dic={}
     left=0
@@ -17,7 +17,7 @@ def solution(string,pattern):
             if dic[x]==pattern_dic[x]:
                 count+=1
             while dic[x]>pattern_dic[x]:
-                if dic[string[left]]<pattern_dic[string[left]]:
+                if dic[string[left]]==pattern_dic[string[left]]:
                     count-=1
                 dic[string[left]]-=1
                 left+=1
@@ -45,7 +45,7 @@ def solution(string,pattern):
                 charFrequencyMap[string[left]]+=1
             left+=1
     return False
-        
+    '''
 def main():
     print(solution("oidbcaf","abc"))
     print(solution("odicf","dc"))
